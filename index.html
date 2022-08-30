@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
+    <script src="https://kit.fontawesome.com/159d0e16c5.js" crossorigin="anonymous"></script>
+    <title>Les petits plats</title>
+</head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <img src="assets/logo.png" alt="Logo - Les petits Plats">
+        </div>
 
+        <nav>
+            <form>
+                <input type="text" autocomplete="off" placeholder="Rechercher une recette">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="filters">
+            <div class="filter-selected"><span></span> <i class="far fa-times-circle"></i></div>
+
+            <div class="filters-content">
+                <div id="ingredients"><span>Ingredients</span> <i class="fas fa-chevron-down"></i></div>
+                <div id="appareils"><span>Appareils</span> <i class="fas fa-chevron-down"></i></div>
+                <div id="ustensiles"><span>Ustensiles</span> <i class="fas fa-chevron-down"></i></div>
+            </div>
+        </div>
+        
+        <div class="cards-content">
+
+        </div>
+    </main>
+</body>
+</html>
