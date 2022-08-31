@@ -1,8 +1,8 @@
 import {recipes} from "../data/recipes.js"
 const cardsContent = document.querySelector(".cards-content");
 
-let recipesDataAll = [];
-recipesDataAll = recipes;
+// let recipesDataAll = [];
+// recipesDataAll = recipes;
 
 function cardsDisplay() {
     cardsContent.innerHTML = recipes.map ((recipe) => {
