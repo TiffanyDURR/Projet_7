@@ -135,12 +135,20 @@ header form button {
     width: 50%;
     font-weight: 400;
     font-size: 14px;
-    margin-top: 12px;
+
 }
 
 .recipe-ingredients {
     display: block;
     margin-right: 18px;
+    margin-top: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 100px;
+    margin-top: 12px;
 }
 
 .recipe-ingredients b {
@@ -154,6 +162,12 @@ header form button {
     text-overflow: ellipsis;
     overflow: hidden;
     height: 102px;
+    margin-top: 12px;
+}
+
+.ingredient-element {
+margin-bottom: 4px;
+display: block;
 }
 
 /* MAIN - Filters */

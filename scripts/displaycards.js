@@ -3,26 +3,33 @@ const cardsContent = document.querySelector(".cards-content");
 
 let recipesDataAll = [];
 recipesDataAll = recipes;
-// console.log(clientsDataAll);
 
 function cardsDisplay() {
     cardsContent.innerHTML = recipes.map ((recipe) => {
         let ingredientsDataAll = []; 
         let quantityDataAll = []; 
         let unitDataAll = [];  
+        let regexGrammes = /grammes/i;
         for (let i = 0; i < recipe.ingredients.length; i++) {
             let ingredientWay = recipe.ingredients[i].ingredient;
             let quantityWay = recipe.ingredients[i].quantity;
             let unitWay = recipe.ingredients[i].unit;
+            let stringifyUnitWay = JSON.stringify(unitWay);
+  
+            if (typeof unitWay == "string") {
+                unitWay = stringifyUnitWay.replace(regexGrammes,`gr`);
+                unitWay = unitWay.replace(/"/g,"")
+            } 
+
             if (typeof quantityWay == "undefined") {
                 quantityWay = "";
-            }
+            } 
             if (typeof unitWay == "undefined") {
                 unitWay = "";
-            }
-            console.log(unitWay.length)
+            } 
+
             ingredientsDataAll+unitDataAll+quantityDataAll.push(`
-            <span><b>${ingredientWay}</b> <span class="deuxpoints">:</span> ${quantityWay} ${unitWay}<br/></span>
+            <span class="ingredient-element"><b>${ingredientWay}</b> : ${quantityWay} <span class="unity">${unitWay}</span><br/></span>
             `);
         }
 
@@ -39,7 +46,7 @@ return `
         </div>
         <div class="recipe-content">
             <div class="recipe-ingredients">
-                ${ingredientsDataAll.join("")} ${quantityDataAll.join("")} ${unitDataAll.join("")}
+                <p>${ingredientsDataAll.join("")} ${quantityDataAll.join("")} ${unitDataAll.join("")}</p>
             </div>
             <div class="recipe-description">
                 <p>${recipe.description}</p>
