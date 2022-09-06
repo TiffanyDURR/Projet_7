@@ -21,7 +21,7 @@
 
         <nav>
             <form>
-                <input type="text" autocomplete="off" placeholder="Rechercher une recette">
+                <input type="text" autocomplete="off" placeholder="Rechercher une recette" id="mainSearchInput">
                 <button type="submit"><i class="fas fa-search"></i></button>
             </form>
         </nav>
@@ -30,12 +30,27 @@
     <main>
 
         <div class="filters">
-            <div class="selected-filters"><div class="filter-selected"><span></span> <i class="far fa-times-circle"></i></div></div>
+            <div class="selected-filters">
+                <div class="filter-selected ingredients-selected"><span></span> <i class="far fa-times-circle ingClose"></i></div>
+                <div class="filter-selected appareils-selected"><span></span> <i class="far fa-times-circle appClose"></i></div>
+                <div class="filter-selected ustensiles-selected"><span></span> <i class="far fa-times-circle ustClose"></i></div>
+            </div>
 
             <div class="filters-content">
-                <div id="ingredients"> <input type="text" autocomplete="off" placeholder="Ingredients"><i class="fas fa-chevron-down"></i></div>
-                <div id="appareils"> <input type="text" autocomplete="off" placeholder="Appareils"> <i class="fas fa-chevron-down"></i></div>
-                <div id="ustensiles"> <input type="text" autocomplete="off" placeholder="Ustensiles"> <i class="fas fa-chevron-down"></i></div>
+                <div id="ingredients"> <input type="text" autocomplete="off" placeholder="Ingredients" id="inputIngredients"><i class="fas fa-chevron-down ingDownChevron"></i><i class="fas fa-chevron-up ingUpChevron"></i></div>
+                <div id="appareils"> <input type="text" autocomplete="off" placeholder="Appareils"  id="inputAppareils"> <i class="fas fa-chevron-down appDownChevron"></i><i class="fas fa-chevron-up appUpChevron"></i></div>
+                <div id="ustensiles"> <input type="text" autocomplete="off" placeholder="Ustensiles" id="inputUstensiles"> <i class="fas fa-chevron-down ustDownChevron"></i><i class="fas fa-chevron-up ustUpChevron"></i></div>
+            </div>
+            <div class="filters-tags">
+                <div class="ingredients-list">
+
+                </div>
+                <div class="appareils-list">
+                   
+                </div>
+                <div class="ustensiles-list">
+                    
+                </div>
             </div>
         </div>
         
@@ -43,6 +58,7 @@
         </div>
     </main>
     <script type="module" src="scripts/displaycards.js"></script>
-    <script type="module" src="scripts/mainsearch.js"></script>
+    <script type="module" src="scripts/displayfilters.js"></script>
+    <script type="module" src="scripts/styles.js"></script>
 </body>
 </html>

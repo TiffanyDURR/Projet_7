@@ -20,10 +20,10 @@ a {
 }
 
 :active, :focus {
-border: none;
-outline: none;
-box-shadow: none;
-border: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border: none;
 }
 
 /* HEADER */
@@ -185,6 +185,19 @@ display: block;
     color: #ffffff;
     font-weight: 700;
     font-size: 14px;
+    margin-right: 16px;
+}
+
+.ingredients-selected {
+    background-color: #3282F7;
+}
+
+.appareils-selected {
+background-color: #68D9A4;
+}
+
+.ustensiles-selected {
+background-color: #ED6454;
 }
 
 .filter-selected i {
@@ -208,7 +221,6 @@ display: block;
     color: #ffffff;
     font-weight: 400;
     font-size: 16px;
-    padding: 18px 12px 18px 12px;
 }
 
 .filters-content-clicked {
@@ -235,16 +247,85 @@ display: block;
     opacity: 1;
 }
 
-.filters #ingredients {
+#ingredients {
+    background-color: #3282F7;
+    padding: 18px 12px 18px 12px;
+}
+
+ #appareils {
+    background-color: #68D9A4;
+    padding: 18px 12px 18px 12px;
+}
+
+#ustensiles {
+    background-color: #ED6454;
+    padding: 18px 12px 18px 12px;
+}
+
+/* MAIN - Filters TAGS */
+
+.filters-tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filters-tags div {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+}
+
+.filters-tags div.ingredients-list {
+    width: 669px;
+    margin-right: 16px;
+    padding: 8px;
+    border-radius: 0px 0px 8px 8px;
+    position: absolute;
+    z-index: 182;
+    display: none;
     background-color: #3282F7;
 }
 
-.filters #appareils {
+.filters-tags div.appareils-list {
+    width: 200px;
+    margin-right: 16px;
+    margin-left: 216px;
+    padding: 8px;
+    border-radius: 0px 0px 8px 8px;
+    position: absolute;
+    z-index: 300;
     background-color: #68D9A4;
+    display: none;
 }
 
-.filters #ustensiles {
+.filters-tags div.ustensiles-list {
+    width: 200px;
+    margin-right: 16px;
+    margin-left: 432px;
+    padding: 8px;
+    border-radius: 0px 0px 8px 8px;
+    position: absolute;
+    z-index: 400;
     background-color: #ED6454;
+    display: none;
+}
+
+.filters-tags span {
+    width: 207px;
+    display: block;
+    color: #ffffff;
+    padding: 8px;    
+    font-weight: normal;
+    height: 28px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+i.fas.fa-chevron-up.ingUpChevron, i.fas.fa-chevron-up.appUpChevron, i.fas.fa-chevron-up.ustUpChevron {
+    display: none;
 }
 
 /* UTILS */
@@ -256,4 +337,3 @@ display: block;
 .displayon {
     display: block;
 }
-

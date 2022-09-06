@@ -1,22 +1,25 @@
 import {recipes} from "../data/recipes.js"
 // Récupère les données de RECIPES.JS.
-
-// Éléments du DOM 
 const cardsContent = document.querySelector(".cards-content");
+// Element du DOM contenant toutes les cartes des recettes.
+
+// Logique de recherche pour la recherche principale.
+function mainSearch () {
 const mainSearchInput = document.getElementById("mainSearchInput");
 
+mainSearchInput.addEventListener("input", (e) => {
+    let inputValue = e.target.value;
+    console.log(inputValue)
+})
+}
+
+mainSearch();
 
 // Logique d'affichage des cartes. 
 function cardsDisplay() {
     // Affichage des cartes. 
-    cardsContent.innerHTML = recipes
-    
-    // Logique d'affichage en fonction de ce qui est tapé dans la barre de recherche principale. 
-    .filter((recipeName) => recipeName.name.toLocaleLowerCase().includes(mainSearchInput.value.toLocaleLowerCase())) 
-
-        // AFFICHAGE
-        // Listing de toutes les recettes dans le conteneur des cartes.
-    .map ((recipe) => {
+    cardsContent.innerHTML = recipes.map ((recipe) => {
+        // MAP de toutes les recettes dans le conteneur des cartes.
         let ingredientsDataAll = []; 
         let quantityDataAll = []; 
         let unitDataAll = [];  
@@ -53,7 +56,7 @@ function cardsDisplay() {
         }
 
 return `
-    <article class="recipe-card" id="${recipe.id}recipe">
+    <article class="recipe-card">
         <figure></figure>
         <div class="recipe-card-content">
             <div class="card-header">
@@ -81,4 +84,74 @@ return `
 
 cardsDisplay();
 
-mainSearchInput.addEventListener("input", cardsDisplay);
+// ---------------------------------------------------------------------------
+
+import {recipes} from "../data/recipes.js"
+
+const ingredientsList = document.querySelector(".ingredients-list");
+const appareilList = document.querySelector(".appareils-list");
+const inputIngredients = document.getElementById("inputIngredients");
+const ingredientDIV = document.getElementById("ingredients");
+const inputAppareils = document.getElementById("inputAppareils");
+const appareilsDIV = document.getElementById("appareils");
+
+
+// INGREDIENTS 
+
+function ingredientsListDisplay() {
+
+    recipes.map ((recipe) => {
+        let ingredientsDataAll = []; 
+        for (let i = 0; i < recipe.ingredients.length; i++) {
+            let ingredientWay = recipe.ingredients[i].ingredient;
+            let ingredientID = ingredientWay;
+            ingredientID = ingredientID.toLocaleLowerCase();
+            ingredientID = ingredientID.replace(/[^a-zA-Z0-9_-]/g,'')
+            ingredientsDataAll.push(`<span id="${ingredientID}">${ingredientWay}</span>`);
+        }
+        ingredientsList.innerHTML += `${ingredientsDataAll.join("")}`
+}
+    )
+}
+
+ingredientsListDisplay();
+
+// APPAREILS
+
+function appareilListDisplay() {
+
+    ingredientDIV.innerHTML = recipes
+
+    .map ((recipe) => {
+        let appareilsWay = recipe.appliance;
+        appareilList.innerHTML += `<span>${appareilsWay}</span>`
+
+        return ``
+    
+}
+    )
+}
+
+appareilListDisplay();
+
+// ----------------------------------
+
+
+function appareilsListDisplay() {
+
+    recipes.filter((recipe) => {
+        appareilsList.addEventListener("click", (e) => {
+            console.log(e.target.id);
+        })
+        recipe.appliance.toLocaleLowerCase().includes(inputAppareils.value.toLocaleLowerCase())
+    })
+
+    recipes.map((recipe) => {
+appareilsList.innerHTML += `<span id="${recipe.id}appareil">${recipe.appliance}</span>`
+    })
+
+}
+
+appareilsListDisplay();
+
+inputAppareils.addEventListener("input", appareilsListDisplay);
