@@ -1,3 +1,5 @@
+export function JSstyles () {
+
 let removeIngredientTag = document.querySelector(".ingClose");
 let removeAppareilTag = document.querySelector(".appClose");
 let removeUstenstileTag = document.querySelector(".ustClose");
@@ -250,3 +252,4 @@ function ingredientsStyleTags () {
         ustensilesStyleTags();
         
 
+    }
