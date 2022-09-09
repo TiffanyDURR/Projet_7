@@ -1,4 +1,4 @@
-export function JSstyles () {
+export function styles () {
 
 let removeIngredientTag = document.querySelector(".ingClose");
 let removeAppareilTag = document.querySelector(".appClose");
