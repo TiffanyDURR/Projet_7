@@ -1,6 +1,6 @@
 import {recipes} from "../data/recipes.js"
 import {filters} from "./filters.js";
-import {JSstyles} from "./styles.js";
+import {styles} from "./styles.js";
 
 const cardsContent = document.querySelector(".cards-content");
 const searchBar = document.getElementById("mainSearchInput");
