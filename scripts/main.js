@@ -1,5 +1,5 @@
 import {recipes} from "../data/recipes.js"
-import { displayFilters } from "./displayfilters.js";
+import {filters} from "./filters.js";
 import {JSstyles} from "./styles.js";
 
 const cardsContent = document.querySelector(".cards-content");
