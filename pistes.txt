@@ -1,9 +1,0 @@
-Pour les tags ;
-if tag ${texte} match avec card${id} 
-avec filter
-?
-
-// ----
-
-
-
