@@ -12,15 +12,15 @@ data = recipes;
 function initCards () {
     window.addEventListener("load", () => {
     displayCards(recipes);
-    displayFilters();
-    JSstyles();
+    filters();
+    styles();
     mainSearch();
     })
     }
     initCards();
 
 // Logique d'affichage des cartes.
-function displayCards(recipes) {
+export function displayCards(recipes) {
     const recipesData = 
     recipes.map((recipe) => {
             let ingredientsData = []; 
@@ -70,15 +70,20 @@ function displayCards(recipes) {
 function mainSearch () {
     searchBar.addEventListener("input", (e) => {
         const inputSearchBar = e.target.value.toLowerCase();
-        const filteredRecipes = data.filter((recipe) => {
+        const filteredRecipes = data
+        .filter((recipe) => {
+            let ingredientsData = [];
+            for (let i = 0; i < recipe.ingredients.length; i++) {
+            let ingredientWay = recipe.ingredients[i].ingredient;
+            ingredientsData.push(ingredientWay.toLocaleLowerCase())
+            console.log(ingredientsData);
+            }
             return (
                 recipe.name.toLocaleLowerCase().includes(inputSearchBar) ||
-                recipe.description.toLocaleLowerCase().includes(inputSearchBar) 
+                recipe.description.toLocaleLowerCase().includes(inputSearchBar) ||
+                ingredientsData.includes(inputSearchBar)
             );
         });
         displayCards(filteredRecipes);
     })
     }
-
-    
-
