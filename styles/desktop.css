@@ -135,7 +135,6 @@ header form button {
     width: 50%;
     font-weight: 400;
     font-size: 14px;
-
 }
 
 .recipe-ingredients {
@@ -143,7 +142,7 @@ header form button {
     margin-right: 18px;
     margin-top: 12px;
     display: -webkit-box;
-    -webkit-line-clamp: 5;
+    line-clamp: 5;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -322,6 +321,7 @@ background-color: #ED6454;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     overflow: hidden;
+    cursor: pointer;
 }
 
 i.fas.fa-chevron-up.ingUpChevron, i.fas.fa-chevron-up.appUpChevron, i.fas.fa-chevron-up.ustUpChevron {
