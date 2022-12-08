@@ -1,12 +1,7 @@
 export function styles () {
 
-let removeIngredientTag = document.querySelector(".ingClose");
-let removeAppareilTag = document.querySelector(".appClose");
-let removeUstenstileTag = document.querySelector(".ustClose");
-let tagIngredientDIV = document.querySelector(".ingredients-selected");
-let tagAppareilDIV = document.querySelector(".appareils-selected");
-let tagUstenstileDIV = document.querySelector(".ustensiles-selected");
-
+// let removeIngredientTag = document.querySelector(".ingClose");
+// let tagIngredientDIV = document.querySelector(".ingredients-selected");
 let ingDownChevron = document.querySelector("i.fas.fa-chevron-down.ingDownChevron");
 let appDownChevron = document.querySelector("i.fas.fa-chevron-down.appDownChevron");
 let ustDownChevron = document.querySelector("i.fas.fa-chevron-down.ustDownChevron");
@@ -28,17 +23,11 @@ let appareilsMainDiv = document.getElementById("appareils")
 let ustensilesMainDiv = document.getElementById("ustensiles")
 
 function removetags () {
-removeAppareilTag.addEventListener("click", () => {
-    tagAppareilDIV.style.display = "none";
-})
 
-removeIngredientTag.addEventListener("click", () => {
-    tagIngredientDIV.style.display = "none";
-})
+// removeIngredientTag.addEventListener("click", () => {
+    // tagIngredientDIV.style.display = "none";
+//})
 
-removeUstenstileTag.addEventListener("click", () => {
-    tagUstenstileDIV.style.display = "none";
-})
 }
 removetags();
 
@@ -124,8 +113,9 @@ function ingredientsStyleTags () {
         ustDownChevron.style.display = "block";
         ustUpChevron.style.display = "none";
         ustensilesMainDiv.style.borderRadius = "6px 6px 6px 6px";
-    
-        inputIngredientStyle.addEventListener("input", (e) => {
+    })
+
+    inputIngredientStyle.addEventListener("input", (e) => {
         let inputingredientValue = e.target.value;
         if (inputingredientValue == null || inputingredientValue == "") {
             ingredientsContainer.style.display = "none";
@@ -141,7 +131,7 @@ function ingredientsStyleTags () {
             ingredientsMainDiv.style.width = "669px";
         }    
     })
-    })
+
     ingDownChevron.addEventListener("click", () => {
         ingDownChevron.style.display = "none";
         ingUpChevron.style.display = "block";
