@@ -146,4 +146,4 @@ export function mainSearch() {
       cardsContent.innerHTML = "Aucun résultat de recherche !";
     }
   });
-}
+} 
