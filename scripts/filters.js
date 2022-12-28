@@ -282,5 +282,5 @@ function filterByTag(recipeList) {
         break;
     }
   });
-  return filteredRecipes;
+  return filteredRecipes; 
 }
